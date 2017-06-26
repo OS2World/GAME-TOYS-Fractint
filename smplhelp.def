@@ -1,0 +1,19 @@
+;------------------------------------
+; SMPLHELP.DEF module definition file
+;------------------------------------
+
+LIBRARY        SMPLHELP  INITINSTANCE
+
+STUB           'OS2STUB.EXE'
+DESCRIPTION    'Simple Help Displayer DLL - 1989 Don Egen'
+PROTMODE
+CODE           LOADONCALL
+DATA           NONSHARED
+HEAPSIZE       1024
+STACKSIZE      8192
+EXPORTS        HelpWndProc    @10
+               HelpAboutProc  @11
+               SimpleHelp     @12
+               SimpleHelpExit @13
+               SimpleHelpInit @14
+

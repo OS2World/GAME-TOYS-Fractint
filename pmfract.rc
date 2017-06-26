@@ -1,0 +1,144 @@
+/*---------------------------
+   PMFRACT.RC resource script
+   05/25/91   Donald P. Egen
+  ---------------------------*/
+
+#include <os2.h>
+#include "pmfract.h"
+
+RESOURCE IDT_TEXT IDT_HELP_INTRO  intro.doc      /* Introduction */
+RESOURCE IDT_TEXT IDT_HELP_TYPES  pmfract2.txt   /* Fractal Types */
+RESOURCE IDT_TEXT IDT_HELP_EXTENT pmfract3.txt   /* Extents dialog help */
+RESOURCE IDT_TEXT IDT_HELP_PARAMS pmfract4.txt   /* Set Params dialog help */
+RESOURCE IDT_TEXT IDT_HELP_OPERATE pmfract5.txt  /* Operation hints */
+
+STRINGTABLE
+{
+     IDS_ZOOM_IN  "Enter a Zoom In Factor:"
+     IDS_ZOOM_OUT "Enter a Zoom Out Factor:"
+     IDS_FREEZE   "~Freeze!"
+     IDS_HALT     "Hal~t!"
+     IDS_TITLEBAR "Fractint for PM"
+     IDS_SWAP_MANDEL "~Swap to Mandel"
+     IDS_SWAP_JULIA  "~Swap to Julia"
+     IDS_MISSING_SUB "Calc Failed!\nMissing Sub %d"
+     IDS_FLOAT_FORMAT "%-#16.16g"
+     IDS_VAL_NOTAPP   "N/A"
+     IDS_CLIENT_CLASS "PMFract"
+     IDS_BAD_NUMERIC  "That doesn't look like a number to me!"
+     IDS_SUBTASK_FATAL "Fatal subtask error\n(out of memory)\nProgram ending!"
+     IDS_INIT_FATAL "Fatal Init Error\nAbort"
+     IDS_WORKING    "Working...."
+     IDS_PRINT_NOOPEN "Print Failed!\nCan't Open"
+     IDS_PRINT_ACTION "Print to File...?"
+     IDS_PRINT_HELP   "Specify the File to print into"
+     IDS_OPEN_TITLE   "Select a File to Open"
+     IDS_OPEN_HELP    "Select the Old File to Open"
+     IDS_FORMULA_FILE "Select a Formula File"
+     IDS_FORMULA_FILE_HELP "I need a FRACTINT .FRM file"
+     IDS_LSYSTEM_FILE "Select an L-System File"
+     IDS_LSYSTEM_FILE_HELP "I need a FRACTINT .L file"
+     IDS_IFS_FILE     "Which Iterated Function System?"
+     IDS_IFS_FILE_HELP "I need a FRACTINT .IFS file"
+     IDS_IFS3D_FILE   "Which 3-D Iterated Function System?"
+     IDS_IFS3D_FILE_HELP "I need a FRACTINT .IFS file"
+     IDS_SEL_FORMULA  "Formula Selection"
+     IDS_SEL_LSYSTEM  "L-System Formula Selection"
+     IDS_COLORMAP_TITLE "Color Map File"
+     IDS_COLORMAP_HELP "Select the Color Map File required"
+     IDS_LOAD_WHAT     "What format to Load?"
+     IDS_SAVE_WHAT     "What format to Save?"
+     IDS_EXT_GIF       "\\*.GIF"
+     IDS_EXT_BMP       "\\*.BMP"
+     IDS_EXT_MET       "\\*.MET"
+     IDS_EXT_PCX       "\\*.PCX"
+}
+
+POINTER ID_RESOURCE pmfract.ico
+
+MENU ID_RESOURCE
+     {
+     SUBMENU  "~File",                         IDM_FILE_MENU
+          {
+          MENUITEM "~New...\tF2",              IDM_NEW_FRACTAL
+          MENUITEM "~Open...\tAlt+F2",         IDM_READ_FILE
+          MENUITEM "~Save as...",              IDM_SAVE_FILE
+          MENUITEM SEPARATOR
+          MENUITEM "~Print...\tF4",            IDM_PRINT_FILE
+          MENUITEM SEPARATOR
+          MENUITEM "~Read Color Map...",       IDM_READ_COLORMAP
+          MENUITEM "~Write Color Map...",      IDM_WRITE_COLORMAP
+          MENUITEM SEPARATOR
+          MENUITEM "E~xit\tF3",                SC_CLOSE, MIS_SYSCOMMAND
+          }
+     SUBMENU  "~Edit",                         IDM_EDIT_MENU
+          {
+          MENUITEM "Copy ~Bmp\tCtrl+Ins",      IDM_COPY_BMP
+       /* MENUITEM "Copy ~Met",                IDM_COPY_MET */
+          MENUITEM "~Paste\tShift+Ins",        IDM_PASTE
+          MENUITEM SEPARATOR
+          MENUITEM "Cl~ear ClipBoard",         IDM_CLEAR_CLPB
+          MENUITEM SEPARATOR
+          MENUITEM "Text on ClipBoard",        IDM_CLPB_TEXT, MIS_STATIC
+          MENUITEM "Bitmap on ClipBoard",      IDM_CLPB_BMP,  MIS_STATIC
+          MENUITEM "MetaFile on ClipBoard",    IDM_CLPB_MET,  MIS_STATIC
+          }
+     SUBMENU  "~View",                         IDM_VIEW_MENU
+          {
+          SUBMENU  "Zoom ~In",                 IDM_ZIN_MENU
+                {
+                MENUITEM "to Window",          IDM_ZIN_WIN
+                MENUITEM SEPARATOR
+                MENUITEM "by ~2",              IDM_ZIN_2
+                MENUITEM "by ~5",              IDM_ZIN_5
+                MENUITEM "by ~10",             IDM_ZIN_10
+                MENUITEM "by ? ...",           IDM_ZIN_PICK
+                }
+          SUBMENU  "Zoom ~Out",                IDM_ZOUT_MENU
+                {
+                MENUITEM "to Window",          IDM_ZOUT_WIN
+                MENUITEM SEPARATOR
+                MENUITEM "by ~2",              IDM_ZOUT_2
+                MENUITEM "by ~5",              IDM_ZOUT_5
+                MENUITEM "by ~10",             IDM_ZOUT_10
+                MENUITEM "by ? ...",           IDM_ZOUT_PICK
+                }
+          MENUITEM SEPARATOR
+          MENUITEM "~Pan Center",              IDM_PAN
+          }
+     SUBMENU "~Options" ,                      IDM_OPTIONS_MENU
+          {
+          MENUITEM "~Swap to XXXXXXXX",        IDM_SET_SWAP
+          MENUITEM SEPARATOR
+          MENUITEM "Set ~Extents..." ,         IDM_SET_EXTENTS
+          MENUITEM "Set ~Parameters...",       IDM_SET_PARAMS
+          MENUITEM "Set ~Options...",          IDM_SET_OPTIONS
+          MENUITEM "~Reset Above",             IDM_SET_RESET
+          MENUITEM SEPARATOR
+          MENUITEM "Set ~Image Settings...",   IDM_SET_IMAGE
+          MENUITEM "Set P~alette...",          IDM_SET_PALETTE
+          }
+     MENUITEM "~Freeze!",                      IDM_FREEZE_HALT
+     MENUITEM "~GO!",                          IDM_GO
+     SUBMENU "~Help",                       IDM_HELP
+          {
+          MENUITEM "~Introduction",         IDM_HELP_INTRO
+          MENUITEM "~Fractal Types",        IDM_HELP_FRACTTYPE
+          MENUITEM "~Operation\tF1",        IDM_HELP_OPERATE
+          MENUITEM SEPARATOR
+          MENUITEM "A~bout Fractint...",    IDM_ABOUT
+          }
+     }
+
+rcinclude pmfract.dlg
+
+ACCELTABLE ID_RESOURCE
+{
+     VK_F3,     SC_CLOSE,        VIRTUALKEY, SYSCOMMAND
+     VK_F2,     IDM_NEW_FRACTAL, VIRTUALKEY
+     VK_F2,     IDM_READ_FILE,   VIRTUALKEY, ALT
+     VK_F4,     IDM_PRINT_FILE,  VIRTUALKEY
+     VK_INSERT, IDM_COPY_BMP,    VIRTUALKEY, CONTROL
+     VK_INSERT, IDM_PASTE,       VIRTUALKEY, SHIFT
+}
+

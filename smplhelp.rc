@@ -1,0 +1,53 @@
+/*---------------------------------
+   SMPLHELP.RC resource script file
+  ---------------------------------*/
+
+#include <os2.h>
+#include "smplhelp.hh"
+
+POINTER ID_RESOURCE smplhelp.ico
+
+RESOURCE IDT_TEXT IDT_HELPONHELP smplhelp.hlp
+
+STRINGTABLE
+     {
+     IDS_CLASS, "SmplHelp"
+     IDS_TITLE, "Help for "
+     IDS_WORKING, "Working..."
+     IDS_BADATTACH, "Thread Create Failed\nRC=%#04X"
+     }
+MENU ID_RESOURCE PRELOAD
+BEGIN
+    SUBMENU  "~Help",    IDM_HELP
+        BEGIN
+            MENUITEM "~Help on Help\tF1", IDM_HELP,       MIS_HELP
+            MENUITEM "~Last Help\tF9",    IDM_RESTORE
+            MENUITEM SEPARATOR
+            MENUITEM "A~bout...",        IDM_ABOUT,      MIS_TEXT
+        END
+    SUBMENU  "E~xit",   -1
+        BEGIN
+            MENUITEM "E~xit Help\tF3",    SC_CLOSE, MIS_SYSCOMMAND
+            MENUITEM "~Resume Help",      -1
+        END
+END
+
+ACCELTABLE ID_RESOURCE
+BEGIN
+    VK_F3,      SC_CLOSE, VIRTUALKEY, SYSCOMMAND
+    VK_F9,      IDM_RESTORE, VIRTUALKEY
+END
+
+/* the ICON statement here is really dummy.  See the comments in the
+   About... command code in the SMPLHELP.C module.  */
+DLGTEMPLATE IDD_ABOUT {
+    DIALOG "", 0, 10, 60, 160, 80, WS_SAVEBITS , FCF_DLGBORDER {
+        CTEXT   "OS/2 Presentation Manager"        -1, 10, 65, 140, 10
+        CTEXT   "Simple Help System"               -1, 10, 55, 140, 10
+        ICON    SPTR_APPICON               IDC_MYICON,  8, 40,   0,  0, SS_SYSICON
+	CTEXT	"Version 1.3"			   -1, 10, 30, 140, 10
+	CTEXT	"Donald P. Egen,  09/30/1990"	   -1, 10, 20, 140, 10
+        DEFPUSHBUTTON "Ok"                 DID_OK, 64,  4, 32,  14, WS_GROUP
+    }
+}
+

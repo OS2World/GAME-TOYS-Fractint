@@ -1,0 +1,37 @@
+#-------------------
+# SMPLHELP make file
+#-------------------
+
+# debug compile macro
+cd=cl -c -G2sw -W4 -Aflw -Zpei -Od
+
+nd=/co
+
+# final compile macro
+co=cl -c -G2sw -W4 -Aflw -Zpei -Oxaz -B2 C2L -B3 C3L
+
+# default to debugging compile
+cl=$(cd)
+
+#
+# main target
+ALL: smplhelp.dll smplhelp.lib
+
+smplhint.obj : smplhint.asm
+     masm smplhint /mx;
+
+smplhelp.obj : smplhelp.c smplhelp.hh
+     $(cl) smplhelp.c
+
+smplhelp.res : smplhelp.rc smplhelp.ico smplhelp.hh smplhelp.hlp
+     rc -r smplhelp
+
+smplhelp.dll : smplhelp.obj smplhint.obj smplhelp.def smplhelp.res
+     link smplhelp smplhint, /align:16, /li $(nd) /m, os2 llibcdll /nod , smplhelp
+     rc smplhelp.res smplhelp.dll
+     mapsym smplhelp
+
+smplhelp.lib: smplhelp.def
+     implib smplhelp.lib smplhelp.def
+
+

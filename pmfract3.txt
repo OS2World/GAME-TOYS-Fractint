@@ -1,0 +1,30 @@
+The Extents of the fractal are the range of the complex plane
+over which the fractal will be calculated.
+
+The "X Range" values are the left and right (lower and upper)
+decimal numbers that define the rectangle's range in the X, or real,
+or left-to-right range of the complex plane.
+
+The "Y Range" values are the top and bottom (upper and lower)
+decimal numbers that define the rectangle's range in the
+Y, or imaginary, or top-to-bottom range of the complex plane.
+
+The numbers that can be entered are limited, and will be automatically
+adjusted if entered out of limits.
+This can be because of restrictions in the fractal calculation
+algorithms, or just because looking at a wider range lacks
+detail and is therefore uninteresting.
+
+If you are interested in zeroing in at a particular complex number,
+that value can be entered as the "Center" X and Y values.
+The Left, Right, Top, and Bottom values will then be automatically
+adjusted to make that value the center but stay in
+acceptable limits.
+
+When entry is complete, select OK, or press Enter.
+To exit with no changes, select Cancel, or press Escape.
+To see the default (built-in) values, press Default.
+To proceed with the default values, press Default, then OK.
+Exiting with OK will cause the fractal to be recalculated
+over the new extents.
+

@@ -1,0 +1,39 @@
+FRACTINT for OS/2 Presentation Manager
+
+PMFRACT is distributed as follows:
+
+READ.ME       the basic documentation file
+*.DOC         other documentation, of which this file is one of them
+PMFRACT.EXE   the main executable file
+SMPLHELP.DLL  support subroutines - Simple Help manager
+OPENDLG.DLL   support subroutines - file Open/Save dialogs
+*.L           L-System parameters from FRACTINT for DOS
+*.FRM         Formulas from FRACTINT for DOS
+*.IFS         Iterated Function System files from FRACTINT for DOS
+*.MAP         Palette map files - most from FRACTINT for DOS
+
+To be able to run PMFRACT, you must put files SMPLHELP.DLL and OPENDLG.DLL
+in a subdirectory that is listed in the LIBPATH= parameter in you OS/2
+CONFIG.SYS file.  If you have created a subdirectory for your own tools
+and toys and listed it in the LIBPATH, it would be best to put them there.
+That is the approach I take for my own system.  If you have not added
+a subdirectory for your own DLL files, or you do not have the slightest
+idea what I am talking about here, then copy SMPLHELP.DLL and OPENDLG.DLL
+to C:\OS2\DLL, which is the subdirectory where OS/2 himself puts his
+support subroutine files.  Failure to do this will usually result in
+the following error message on attempting to start PMFRACT:
+    SYS1804: The system cannot find the file .
+Note that OS/2 is actually attempting to tell you "I cannot find OPENDLG.DLL"
+or "I cannot find SMPLHELP.DLL" but is unsuccessful in doing so.
+Note that the LIBPATH is separate from the PATH for finding executable
+files, and can only be changed by altering CONFIG.SYS and re-booting.
+
+The other files are best put all together in the subdirectory of your
+choice.
+
+PMFRACT may be started just by saying PMFRACT.  All command line
+arguments documented for release 15.1 or FRACTINT for DOS are legal,
+but some are ignored (such as VIDEO= and BATCH=).
+For example, PMFRACT TYPE=MANDEL CORNERS=-0.726288/-0.721912/0.284798/0.288085
+draws my favorite area of the Mandelbrot set.
+

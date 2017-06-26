@@ -1,0 +1,14 @@
+pmfract.obj+pmfrinit.obj+pmfrdlg1.obj+pmfrdlg2.obj+pmfruser.obj+
+pmfrthrd.obj+pmfrcalc.obj+pmfrsave.obj+pmfrload.obj+pmfrprnt.obj+
+fractals.obj+calcfrac.obj+jb.obj+testpt.obj+mpmath_c.obj+
+3d.obj+cmdfiles.obj+decoder.obj+encoder.obj+f16.obj+fracsubr.obj+
+gifview.obj+line3d.obj+loadfile.obj+lorenz.obj+miscres.obj+
+parser.obj+plot3d.obj+tgaview.obj+lsys.obj+
+calcmand.obj+newton.obj+mpmath_a.obj+fpu387.obj+fpu087.obj+
+fracsuba.obj+pmgenerl.obj+pmfrdata.obj
+pmfract /align:16
+pmfract /map /li
+os2 mlibcep smplhelp opendlg /nod
+pmfract.def
+
+

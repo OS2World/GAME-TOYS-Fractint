@@ -1,0 +1,34 @@
+FRACTINT for OS/2 Presentation Manager
+
+PMFRACT release 2.0 uses the fractal calculation engine of FRACTINT for DOS
+release 15.1.  As such, there is more function in that code than is
+currently exposed to the user in the Presentation Manager interface
+that I have written.  This is because my interest was in learning
+OS/2 Presentation Manager and SAA/CUA user interfaces, as well as
+the pretty pictures, and I have learned about as much as I can tolerate
+for the time being.  However, I expect to get the "bug" again and intend
+to pick up PMFRACT again in the near future.  For the time being,
+this is my list of where I will probably be heading next.
+
+- 3-D and 3-D Overlay - The code to do much of this is in the fractal
+  engine code and just not exposed to the user interface, mostly because
+  I have written as may dialog boxes as I can currently tolerate.
+
+- Color Cycling - This is mostly a Presentation Manager limitation at the
+  moment.  Palettes don't change on the basic 16-color VGA OS/2 systems.
+  Hotter hardware, like the 8514/A display card, support palette changing,
+  but the results are neither particularly fast or particularly pretty
+  (you change the physical palette for everybody without any notification).
+  Future OS/2 levels are supposed to have palette manager support, much like
+  what is now in Windows 3.0, and I will readdress this issue then.
+
+- Real OS/2-style Help - PMFRACT started to grow when OS/2 1.1 was the
+  current version, which did not have a documented Help system.
+  So, I wrote my own called SMPLHELP (Simple Help system).
+  OS/2 1.2 and 1.3 (and I assume 2.x and x.x in the future) do,
+  but I have not yet learned it.  This I intend to address soon as an
+  excuse to learn about the OS/2 1.2 and up Help system.
+
+- Release 16.0 fractal engine - This I will probably address as soon as
+  I can get the code.
+

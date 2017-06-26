@@ -1,0 +1,145 @@
+Copyright (C) 1991 The Stone Soup Group.  FRACTINT for
+Presentation Manager may be freely copied and distributed,
+but may not be sold.
+
+GIF and "Graphics Interchange Format" are trademarks of Compuserve
+Incorporated, an H&R Block Company.
+
+
+How to operate Mandelbrot Investigator.
+
+The Mandelbrot Investigator operates from the menu via either
+a mouse or a keyboard.
+However, zooming and panning using either View/Pan Center
+or the View/Zoom In/Zoom Out works only with a mouse.
+To change the are of the fractal viewed using the keyboard,
+change the extents and/or center using Options/Extents.
+
+The main controls are the fifth and sixth menu bar entries.
+The fifth entry switches between "Halt!" and "Freeze!".
+When "Halt!" is displayed, it implies that a fractal is being
+calculated and drawn, and if you want to stop the calculation,
+select "Halt!" and it will stop shortly.
+When "Freeze!" is displayed, a calculation is not in progress
+and selecting "Freeze!" will cause a calculation to not automatically
+start, as it would after selecting values from either the
+View, Options, or File pull-downs, but will wait for an explicit "Go!" menu
+selection.
+
+To see a smaller part of the fractal, blown up to full screen size,
+use selections from the View/Zoom In or View/Zoom Out menu.
+View changing with the mouse
+is Object/Action oriented, as the IBM SAA guidelines
+expect.
+Zoom In or Zoom Out select magnification or reduction by either
+a fixed or selectable amount around the current center of the display.
+Click the left mouse button to display cross-hairs.
+View/Pan Center then pans to this point.
+To Zoom to a window, click and drag the left mouse button to outline
+a rectangle.
+Then either pick View/Zoom In/to Window to zoom in, or
+View/Zoom Out/to Window to zoom out.
+
+The following selections are on the File menu.
+The File/New selection allows you to select a fractal type from a
+dialog box.
+File/Open reads in a .GIF file (saved by one of the FRACTINT family
+programs) to view or continue calculating,
+or a OS/2 Presentation Manager (BMP) or Windows 3 Bitmap (Win3 BMP).
+A .GIF file created by other than a FRACTINT family program,
+or a bitmap, will
+be restored as a PLASMA fractal, which is not zoomable or otherwise
+editable.
+The program distinguishes between OS/2 Presentation Manager and
+Windows 3 Bitmaps when loading, so you may actually read in
+either kind by selecting either BMP or Win3 BMP.
+File/Save as writes a .GIF file,
+OS/2 Presentation Manager Bitmap, or Windows 3 Bitmap
+of the current fractal and screen
+display.
+The file format for the Bitmap file will be determined
+by your selection of BMP or Win3 BMP (some programs
+will only read one or the other).
+File/Print prints either to the default Presentation Manger printer,
+or, via direct code, to an HP PaintJet.
+File/Read Color Map reads a FRACTINT family .MAP file and makes it
+available as the User Palette selection in the Options/Set Palette
+dialog, discussed below.
+File/Write Color Map writes the palette values currently selected
+by the Options/Set Palette dialog to a FRACTINT family
+.MAP file.
+
+The Edit menu allows access to the OS/2 Presentation Manager Clipboard.
+Edit/Copy Bmp will place a copy of the current screen image
+on the PM Clipboard as a Bitmap.
+Color information is transmitted as part of the bitmap, but
+the fractal description information (that would be saved
+as part of a FRACTINT .GIF file) is not.
+This option is available only when a fractal is currently
+not being calculated, and will be grayed-out
+if it cannot be .
+Edit/Paste, brings a bitmap off the PM Clipboard back onto
+the screen.
+As no fractal description information is available, the
+display becomes a PLASMA fractal.
+Edit/Paste is available only if a calculation is not
+currently in progress, and there is actually a
+bitmap on the Clipboard.
+Edit/Clear ClipBoard causes Fractint for PM to discard
+any current contents of the PM Clipboard, whatever it
+is and from whatever source is came from.
+The entries Edit/Text on ClipBoard, Edit/Bitmap on ClipBoard,
+and Edit/MetaFile on ClipBoard are not grayed if true -
+they represent exploratory code left in for the time being
+and give an indication of the current state of the PM ClipBoard.
+They don't do anything if selected.
+
+The following selections are on the Options menu.
+The Options/Swap to Mandel or Options/Swap to Julia allows you to switch
+between related Mandelbrot and Julia sets if the specific fractal
+allows that.
+The Options/Set Extents displays and allows modification of the X and Y
+extents of the complex plane (the numbers that the fractals are
+defined and calculated on) that the display window represents.
+This is a numeric display of the changes made by the View menu.
+The Options/Set Parameters displays and allows modification to various
+numeric parameters that each fractal calculation contains.
+The meaning and effects of these parameters can be determined
+from the discussion of the specific fractal in the
+Help/Fractal Types display.
+The Options/Set Options selects various calculation options, such as
+integer or floating point math, number of passes, and calculation
+depth (max iterations).
+The Options/Reset Above will, when in the Freeze state, allow
+the cancelation of changes made by one of the above options,
+restoring the "current" calculation options from what is currently
+displayed.
+The Options/Set Image Settings changes the number and color depth of
+the pixels being calculated.
+The colors can be 2 (black and white), 16 color, or 256 color.
+The pixel dimensions largely affect the resolution of a future saved
+or printed image, as whatever is being calculated will be compressed
+or expanded as needed to fit in the display window.
+The Options/Set Palette selects a dialog giving various palette
+options.
+The Black and White, 16-color VGA, 256-color VGA, and Physical palette
+are fixed by the program or your hardware.
+The User Loaded Palette selection will be enabled when sucessfully
+loaded by an external palette, such as reading a Color Map via
+the File/Read Color Map menu selection, or by the palette contained
+in a loaded .GIF file.
+
+At any time additional Help can be displayed.
+The Help/Introduction display describes the basics of fractals
+and the calculation engine this program uses.
+The Help/Fractal Types describes the fractal types displayable
+by this program.
+
+When you get tired of consuming computer resources looking
+at pretty pictures, the File/Exit selection will shut down the
+program.
+
+Have loads of fun!!
+
+Donald P. Egen  [CIS 73507,3143]
+

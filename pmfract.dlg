@@ -1,0 +1,239 @@
+/*
+    Diaglog templates for Fractint for PM
+    05/25/91     Code by Donald P. Egen
+*/
+
+DLGTEMPLATE IDD_ABOUT
+     {
+     DIALOG "", 0, 0, 0, 200, 100,, FCF_DLGBORDER
+          {
+          CTEXT "Fractint for PM",                       -1, 10, 82, 180, 8
+          CTEXT "Version 2.00",                          -1, 10, 72, 180, 8
+          CTEXT "May 25, 1991",                          -1, 10, 62, 180, 8
+          CTEXT "Code by Donald P. Egen",                -1, 10, 52, 180, 8
+          CTEXT "Calculation Engine from FRACTINT 15.1", -1, 10, 42, 180, 8
+          CTEXT "(C) 1991 The Stone Soup Group",         -1, 10, 32, 180, 8
+          ICON  ID_RESOURCE ,                            -1,  8, 68,   0, 0
+          DEFPUSHBUTTON "OK" ,           DID_OK, 80, 8, 40, 12, WS_GROUP
+          }
+     }
+
+DLGTEMPLATE IDD_NUMBER_PICK
+     {
+     DIALOG "", 0, 0, 0, 160, 64,, FCF_DLGBORDER
+          {
+          CTEXT " ",          IDD_NUMBER_PROMPT, 10, 46, 140, 8
+          ENTRYFIELD "",          IDD_NUMBER_EF, 40, 30,  64, 8, ES_MARGIN
+          DEFPUSHBUTTON "OK",            DID_OK,  4,  8,  32, 12
+          PUSHBUTTON "CANCEL",       DID_CANCEL, 44,  8,  96, 12
+          }
+     }
+
+DLGTEMPLATE IDD_SET_EXTENTS
+     {
+     DIALOG "", 0, 0, 0, 230, 172,, FCF_DLGBORDER
+          {
+          CTEXT "See or Set Visible Extents", -1,  28, 156, 170, 8
+          LTEXT "X Range:",                   -1,  10, 142, 180, 8
+          LTEXT "L"  ,                        -1,  14, 128,  10, 8
+          ENTRYFIELD " ",          IDD_SET_XLEFT,  28, 128, 170, 8, ES_MARGIN
+          LTEXT "R" ,                         -1,  14, 114,  10, 8
+          ENTRYFIELD " ",         IDD_SET_XRIGHT,  28, 114, 170, 8, ES_MARGIN
+          LTEXT "Y Range:",                   -1,  10, 100, 180, 8
+          LTEXT "T"   ,                       -1,  14,  86,  10, 8
+          ENTRYFIELD " ",           IDD_SET_YTOP,  28,  86, 170, 8, ES_MARGIN
+          LTEXT "B"   ,                       -1,  14,  72,  10, 8
+          ENTRYFIELD " ",        IDD_SET_YBOTTOM,  28,  72, 170, 8, ES_MARGIN
+          LTEXT "Center:"                     -1,  10,  58, 180, 8
+          LTEXT "X" ,                         -1,  14,  44,  10, 8
+          ENTRYFIELD " ",        IDD_SET_XCENTER,  28,  44, 170, 8, ES_MARGIN
+          LTEXT "Y" ,                         -1,  14,  30,  10, 8
+          ENTRYFIELD " ",        IDD_SET_YCENTER,  28,  30, 170, 8, ES_MARGIN
+          DEFPUSHBUTTON "OK",             DID_OK,  20,   8,  24, 12
+          PUSHBUTTON "Defaults",    IDD_SET_XDEF,  50,   8,  48, 12
+          PUSHBUTTON "Cancel" ,       DID_CANCEL, 104,   8,  42, 12
+          PUSHBUTTON "F1=Help ",   IDD_SET_XHELP, 152,   8,  48, 12, BS_HELP
+          }
+     }
+
+DLGTEMPLATE IDD_SET_PARAMS
+     {
+     DIALOG "", 0, 0, 0, 230, 208,, FCF_DLGBORDER
+          {
+          CTEXT "Change Parameters",          -1,  28, 192, 170, 8
+          GROUPBOX "Fractal Type", IDD_SET_PFRACTALTYPE, 8, 24, 214, 162
+          LTEXT "Parameter 0",     IDD_SET_P0TEXT, 14, 164, 170, 8
+          ENTRYFIELD " ",             IDD_SET_P0,  28, 150, 170, 8, ES_MARGIN
+          LTEXT "Parameter 1",    IDD_SET_P1TEXT,  14, 136, 170, 8
+          ENTRYFIELD " ",             IDD_SET_P1,  28, 122, 170, 8, ES_MARGIN
+          LTEXT "Parameter 2",    IDD_SET_P2TEXT,  14, 108, 170, 8
+          ENTRYFIELD " ",             IDD_SET_P2,  28,  94, 170, 8, ES_MARGIN
+          LTEXT "Parameter 3",    IDD_SET_P3TEXT,  14,  80, 170, 8
+          ENTRYFIELD " ",             IDD_SET_P3,  28,  66, 170, 8, ES_MARGIN
+          CTEXT "Trig Fn 1",      IDD_SET_T1TEXT,  16,  52,  46, 8
+          COMBOBOX "SIN",           IDD_SET_T1CB,  16,  16,  46, 32,
+                      CBS_DROPDOWNLIST | WS_GROUP | WS_TABSTOP | WS_VISIBLE
+          CTEXT "Trig Fn 2",      IDD_SET_T2TEXT,  66,  52,  46, 8
+          COMBOBOX "SQR",           IDD_SET_T2CB,  66,  16,  46, 32,
+                      CBS_DROPDOWNLIST | WS_GROUP | WS_TABSTOP | WS_VISIBLE
+          CTEXT "Trig Fn 3",      IDD_SET_T3TEXT, 116,  52,  46, 8
+          COMBOBOX "SINH",          IDD_SET_T3CB, 116,  16,  46, 32,
+                      CBS_DROPDOWNLIST | WS_GROUP | WS_TABSTOP | WS_VISIBLE
+          CTEXT "Trig Fn 4",      IDD_SET_T4TEXT, 166,  52,  46, 8
+          COMBOBOX "COSH",          IDD_SET_T4CB, 166,  16,  46, 32,
+                      CBS_DROPDOWNLIST | WS_GROUP | WS_TABSTOP | WS_VISIBLE
+          DEFPUSHBUTTON "OK",             DID_OK,  24,   8,  24, 12
+          PUSHBUTTON "Defaults",    IDD_SET_PDEF,  54,   8,  48, 12
+          PUSHBUTTON "Cancel" ,       DID_CANCEL, 108,   8,  42, 12
+          PUSHBUTTON "F1=Help ",   IDD_SET_PHELP, 156,   8,  48, 12, BS_HELP
+          }
+     }
+
+
+DLGTEMPLATE IDD_SET_FRACTTYPE
+     {
+     DIALOG "", 0, 0, 0, 202, 104,, FCF_DLGBORDER
+          {
+          CTEXT  "Select a Fractal Type",       -1,  10,   80, 182,  16
+          LISTBOX             IDD_SET_FRACTTYPE_LB,  10,    8, 120,  64, WS_TABSTOP
+          DEFPUSHBUTTON   "OK"              DID_OK, 144,   60,  48,  12, WS_GROUP | WS_TABSTOP
+          PUSHBUTTON      "Cancel"      DID_CANCEL, 144,   34,  48,  12
+          PUSHBUTTON      "F1=Help"  IDD_SET_THELP, 144,    8,  48,  12, BS_HELP
+          }
+     }
+
+DLGTEMPLATE IDD_SET_IMAGE
+     {
+     DIALOG "", 0, 0, 0, 166, 140,, FCF_DLGBORDER
+          {
+          LTEXT "Image",                      -1,  10, 124,  65,  8
+          LTEXT "Options",                    -1   10, 116,  65,  8
+
+          GROUPBOX "Target",                  -1,  10,  28,  56, 70
+          PUSHBUTTON "~Window",      IDD_IMG_WIN,  14,  68,  48,  8, BS_NOBORDER | WS_GROUP | WS_TABSTOP
+          PUSHBUTTON "~Screen",      IDD_IMG_SCR,  14,  56,  48,  8, BS_NOBORDER
+          PUSHBUTTON "~Printer",     IDD_IMG_PRT,  14,  44,  48,  8, BS_NOBORDER
+          PUSHBUTTON "~640x480",     IDD_IMG_VGA,  14,  32,  48,  8, BS_NOBORDER
+
+          RTEXT "Image Size",                 -1,  98, 124,  58,  8
+          LTEXT "X" ,                         -1, 110, 112,  10,  8
+          ENTRYFIELD " ",              IDD_IMG_X, 122, 112,  32,  8, ES_MARGIN | WS_TABSTOP
+          LTEXT "Y" ,                         -1, 110,  96,  10,  8
+          ENTRYFIELD " ",              IDD_IMG_Y, 122,  96,  32,  8, ES_MARGIN | WS_TABSTOP
+
+          GROUPBOX "Colors",                      -1,  84,  28,  72, 44
+          AUTORADIOBUTTON "~2-Color",     IDD_IMG_C2,  86,  56,  64,  8, WS_GROUP | WS_TABSTOP
+          AUTORADIOBUTTON "~16-Color",   IDD_IMG_C16,  86,  44,  64,  8
+          AUTORADIOBUTTON "2~56-Color", IDD_IMG_C256,  86,  32,  64,  8
+
+          DEFPUSHBUTTON "OK",             DID_OK,  10,   8,  24, 12, WS_GROUP | WS_TABSTOP
+          PUSHBUTTON "Cancel" ,       DID_CANCEL,  50,   8,  42, 12
+          PUSHBUTTON "F1=Help ",   IDD_SET_IHELP, 108,   8,  48, 12, BS_HELP
+          }
+     }
+
+DLGTEMPLATE IDD_SET_PALETTE
+     {
+     DIALOG "", 0, 0, 0, 150, 134,, FCF_DLGBORDER
+          {
+          CTEXT "Select Palette",                             -1,  10, 118, 130,  8
+
+          AUTORADIOBUTTON "~Black/White",             IDD_PAL_BW,  10, 102, 130,  8, WS_GROUP | WS_TABSTOP
+          AUTORADIOBUTTON "~White/Black",             IDD_PAL_WB,  10,  88, 130,  8
+          AUTORADIOBUTTON "VGA ~16-Color",         IDD_PAL_VGA16,  10,  74, 130,  8
+          AUTORADIOBUTTON "VGA 25~6-Color",       IDD_PAL_VGA256,  10,  60, 130,  8
+          AUTORADIOBUTTON "~OS/2 Physical Palette", IDD_PAL_PHYS,  10,  46, 130,  8
+          AUTORADIOBUTTON "~User-Loaded Palette",   IDD_PAL_USER,  10,  32, 130,  8, WS_DISABLED
+
+          DEFPUSHBUTTON "OK",             DID_OK,  33,   8,  24, 12, WS_GROUP | WS_TABSTOP
+          PUSHBUTTON "F1=Help ",   IDD_SET_PHELP,  69,   8,  48, 12, BS_HELP
+          }
+     }
+
+DLGTEMPLATE IDD_SET_OPTIONS
+     {
+     DIALOG "", 0, 0, 0, 228, 214,, FCF_DLGBORDER
+          {
+          CTEXT "Change Options and DoDads",       -1,  10, 198, 208, 8
+
+          GROUPBOX "Passes",                       -1,  10, 158, 208,  24
+          AUTORADIOBUTTON "~1-Pass",  IDD_OPT_PASSES1,  14, 166,  48,   8, WS_GROUP | WS_TABSTOP
+          AUTORADIOBUTTON "~2-Pass",  IDD_OPT_PASSES2,  64, 166,  48,   8,
+          AUTORADIOBUTTON "~S-Guess", IDD_OPT_PASSESG, 114, 166,  48,   8,
+          AUTORADIOBUTTON "~B-Trace", IDD_OPT_PASSESB, 164, 166,  48,   8,
+
+          GROUPBOX "Math Type",                          -1,  10, 126, 208,  24
+          AUTORADIOBUTTON "~Integer",         IDD_OPT_MATHI,  14, 134,  76,   8, WS_GROUP | WS_TABSTOP
+          AUTORADIOBUTTON "~Floating-Point",  IDD_OPT_MATHF, 138, 134,  76,   8,
+
+          LTEXT "Maximum Iterations (10 - 32000)",      -1,  10, 110, 160, 8
+          ENTRYFIELD " ",                  IDD_OPT_MAXITER, 186, 110,  32, 8, ES_MARGIN
+          LTEXT "Biomorph Color (-1 = none)",           -1,  10,  96, 160, 8
+          ENTRYFIELD " ",                  IDD_OPT_BIOMORF, 186,  96,  32, 8, ES_MARGIN
+          LTEXT "Decomposition (2,4,8,...,256, 0=Off)", -1,  10,  82, 160, 8
+          ENTRYFIELD " ",                   IDD_OPT_DECOMP, 186,  82,  32, 8, ES_MARGIN
+          LTEXT "Inside Color (1=default, -1=max,",     -1,  10,  68, 160, 8
+          LTEXT "   -60=bof60, -61=bof61)",             -1,  10,  60, 160, 8
+          ENTRYFIELD " ",                  IDD_OPT_INCOLOR, 186,  68,  32, 8, ES_MARGIN
+          LTEXT "Outside Color (-1=none)",              -1,  10,  46, 160, 8
+          ENTRYFIELD " ",                  IDD_OPT_OUTCOLR, 186,  46,  32, 8, ES_MARGIN
+          LTEXT "Distance Estimator Method (0=Off)",    -1,  10,  32, 160, 8
+          ENTRYFIELD " ",                  IDD_OPT_DISTEST, 186,  32,  32, 8, ES_MARGIN
+
+          DEFPUSHBUTTON "OK",             DID_OK,  24,   8,  24, 12, WS_GROUP | WS_TABSTOP
+          PUSHBUTTON "Defaults",    IDD_SET_ODEF,  54,   8,  48, 12
+          PUSHBUTTON "Cancel" ,       DID_CANCEL, 108,   8,  42, 12
+          PUSHBUTTON "F1=Help ",   IDD_SET_OHELP, 156,   8,  48, 12, BS_HELP
+          }
+     }
+
+DLGTEMPLATE IDD_PRINT
+     {
+     DIALOG "", 0, 0, 0, 200, 140,, FCF_DLGBORDER
+          {
+          CTEXT "Print! Where?",                              -1,  10, 118, 180,  8
+
+          GROUPBOX "Target",                  -1,  10,  28,  56, 70
+          AUTORADIOBUTTON "~PM Printer", IDD_PRINT_PM,  14,  68,  48,  8, WS_GROUP | WS_TABSTOP
+          AUTORADIOBUTTON "P~aintJet",   IDD_PRINT_PJ,  14,  56,  48,  8,
+
+          AUTORADIOBUTTON "~File...",  IDD_PRINT_FILE,  86,  56,  64,  8, WS_GROUP | WS_TABSTOP | WS_DISABLED
+          AUTORADIOBUTTON "~Port",     IDD_PRINT_PORT,  86,  44,  64,  8, WS_DISABLED
+
+          ENTRYFIELD "LPT1",       IDD_PRINT_PORTNAME, 122,  44,  48,  8, ES_MARGIN | WS_TABSTOP | WS_DISABLED
+
+          DEFPUSHBUTTON "OK",             DID_OK,  10,   8,  24, 12, WS_GROUP | WS_TABSTOP
+          PUSHBUTTON "Cancel" ,       DID_CANCEL,  50,   8,  42, 12
+          PUSHBUTTON "F1=Help ",  IDD_PRINT_HELP, 108,   8,  48, 12, BS_HELP
+          }
+     }
+
+DLGTEMPLATE IDD_SEL_LIST
+     {
+     DIALOG "", 0, 0, 0, 202, 104,, FCF_DLGBORDER
+          {
+          CTEXT  "Select a What?", IDD_SEL_LIST_WHAT,  10,   80, 182,  16
+          LISTBOX                    IDD_SEL_LIST_LB,  10,    8, 120,  64, WS_TABSTOP
+          DEFPUSHBUTTON  "OK"                 DID_OK, 144,   60,  48,  12, WS_GROUP | WS_TABSTOP
+          PUSHBUTTON     "Cancel"         DID_CANCEL, 144,   34,  48,  12
+          PUSHBUTTON     "F1=Help" IDD_SEL_LIST_HELP, 144,    8,  48,  12, BS_HELP
+          }
+     }
+
+DLGTEMPLATE IDD_LOADSAVE_TYPE
+     {
+     DIALOG "", 0, 0, 0, 202, 140,, FCF_DLGBORDER
+          {
+          GROUPBOX "Load/Save Format?", IDD_LST_WHAT,  10,   10, 130, 120
+          AUTORADIOBUTTON "~GIF",        IDD_LST_GIF,  20,  100, 110,  10, WS_GROUP | WS_TABSTOP
+          AUTORADIOBUTTON "~BMP",        IDD_LST_BMP,  20,   80, 110,  10
+       /* AUTORADIOBUTTON "~MET",        IDD_LST_MET,  20,   60, 110,  10 */
+          AUTORADIOBUTTON "~Win3 BMP", IDD_LST_WIN3BMP, 20,  40, 110,  10
+       /* AUTORADIOBUTTON "~PCX",        IDD_LST_PCX,  20,   20, 110,  10 */
+
+          DEFPUSHBUTTON  "OK"                 DID_OK, 144,   60,  48,  12, WS_GROUP | WS_TABSTOP
+          PUSHBUTTON     "Cancel"         DID_CANCEL, 144,   34,  48,  12
+          PUSHBUTTON     "F1=Help" IDD_LST_WHAT_HELP, 144,    8,  48,  12, BS_HELP
+          }
+     }
+

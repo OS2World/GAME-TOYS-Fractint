@@ -1,0 +1,18 @@
+The Parameters of each fractal algorithm are described by
+a short title, which appears above the entry field for
+each of the (up to) four parameters.
+
+Parameters that don't apply to a given fractal type will have
+no title, and the entry field will be inaccessible.
+
+For information on what the parameters mean, see the description
+of the fractal in question in the "Fractal Types" help data
+selectable from the main menu Help menu.
+
+When entry is complete, select OK, or press Enter.
+To exit with no changes, select Cancel, or press Escape.
+To see the default (built-in) values, press Default.
+To proceed with the default values, press Default, then OK.
+Exiting with OK will cause the fractal to be recalculated
+with the new parameters.
+

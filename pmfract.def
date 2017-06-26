@@ -1,0 +1,30 @@
+;-----------------------------------
+; PMFRACT.DEF module definition file
+;-----------------------------------
+
+NAME	       PMFRACT	  WINDOWAPI
+
+DESCRIPTION    'Fractint for PM. Donald P. Egen-03/16/91'
+PROTMODE
+CODE			      LOADONCALL MOVEABLE DISCARDABLE
+DATA			      LOADONCALL MULTIPLE
+SEGMENTS
+	       PMFRACT_TEXT   PRELOAD	 MOVEABLE DISCARDABLE
+	       PMFRTHRD_TEXT  PRELOAD	 MOVEABLE DISCARDABLE
+	       _DATA	      PRELOAD
+
+HEAPSIZE       8192
+STACKSIZE      8192
+
+EXPORTS        ClientWndProc
+               AboutDlgProc
+	       SetExtentsDlgProc
+               ZoomValueDlgProc
+	       SelFractalDlgProc
+	       SetParametersDlgProc
+	       SetImageDlgProc
+	       SetPaletteDlgProc
+	       SetOptionsDlgProc
+	       PrintOptionsDlgProc
+	       SelWhatDlgProc
+	       LoadSaveFmtDlgProc

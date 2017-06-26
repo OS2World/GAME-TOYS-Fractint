@@ -1,0 +1,47 @@
+SMPLHELP.DLL
+
+(Simple Help)
+
+This is a simple scrolling window for displaying some kind
+of help text.
+Poke at it and it will act like any other window.
+Scroll the text to see more, using either the keyboard
+or the mouse on the scrollbar.
+
+To return to the original Help text, select
+"Last Help" from the Help menu item, or press F9.
+This function lets you switch between this and the
+application help, or between two help texts from the application.
+
+----------------------------------
+
+SMPLHELP.C -- a Simple Help Displayer system
+
+This DLL system is used to display a simple help window
+to go along with a main application window of choice.
+
+Interface is through three functions, only one of which
+is required to be called:
+
+   SimpleHelpInit (HAB hab);    // optional one-time initialization
+   SimpleHelpExit (void);       // optional clean-up call
+   SimpleHelp (HAB hab, HWND hwndUser, PSZ achUser,    // Required call to display
+      HMODULE hmodUser, USHORT idType, USHORT idName); // a given text resource.
+
+Help text is stored as user resources in the callers EXE file.
+The type and ID of these user resources is passed to SimpleHelp,
+which causes the help window to be created if it does not
+exist and the described text to be displayed.
+
+SimpleHelp is the primary interface to the Simple Help System.
+It is assumed to be called from a user Client Window Proc.
+We do what is necessary to get us up and the focus of attention,
+and ready to display the requested help text.
+On return from this function, the Simple Help window is an independent
+top-level window in the same thread as the original caller.
+
+We can be recalled to change the help text even if we are already
+open.  This allows a user routine to have possibly multiple submenu
+entries in his "Help" menu, and the text displayed here can be
+switched by the Help menu in the original window.
+
